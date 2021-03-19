@@ -1,0 +1,7 @@
+*# dependencies*
+
+/node_modules
+/build
+/sessions/
+src/assets/file/uploads/*
+.env

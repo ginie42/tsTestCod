@@ -1,0 +1,32 @@
+{
+    "domain" : "",
+    "routes" : [
+        {
+            "method": "get",
+            "route": "",
+            "render": "index"
+        },
+        {
+            "method": "get",
+            "route": "regBbs",
+            "render": "regBbs"
+        },
+        {
+            "method": "get",
+            "route": "login",
+            "render": "login"
+        },
+        {
+            "method": "post",
+            "route": "main",
+            "controller": "MainController",
+            "action": "renderMain"
+        },
+        {
+            "method": "get",
+            "route": "main2",
+            "controller": "MainController",
+            "action": "renderMain2"
+        }
+    ]
+}
