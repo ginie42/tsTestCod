@@ -26,6 +26,12 @@ import { Table, Column, Model, AllowNull, DataType} from 'sequelize-typescript';
         type: DataType.STRING(30)
     })
     name!: string;
+
+    @AllowNull(false)
+    @Column({
+        type: DataType.STRING(30)
+    })
+    phone!: string;
 }
 
 export default User;

@@ -11,7 +11,13 @@
         <th>subject</th>
         <th>content</th>
       </tr>
-<%=data%>
+<%for(var i=0;i<total;i++){%>
+    <tr>
+        <td><%=data[i].id%></td>
+        <td><%=data[i].subject%></td>
+        <td><%=data[i].content%></td>
+    </tr>
+<%}%>
     </table>
 
     <button onclick="location.href='regBbs'">게시글쓰기</button>

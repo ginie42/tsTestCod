@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BBS</title>
+    <title>BBS-JOIN</title>
   </head>
   <body>
-    <h1>BOARD</h1>
-    <div style="display: none;">
+    <h1>회원가입</h1>
+    <div>
       <button>JOIN</button>
       <button>LOGIN</button>
     </div>
     <form action="/main" method="POST" name="multer_test">
-      <input type="hidden" name="id" value="<%=data.id%>"/>
       <table>
         <tr>
           <td>게시물 제목</td>
           <td>
-            <input type="text" name="subject" value="<%=data.subject%>">
+          
           </td>
         </tr>
         <tr>
           <td>게시물 내용</td>
           <td>
-            <textarea cols="20" rows="4" name="content" ><%=data.content%></textarea>
+           
           </td>
         </tr>
 

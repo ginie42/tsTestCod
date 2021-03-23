@@ -6,24 +6,56 @@ export default class MainController {
     private BoardService = new BoardService();
 
     async renderMain(req: Request, res: Response, next: NextFunction) {
-    
-        console.log('MainController');
+
+        var idx = req.body.id;
+        var mode = "regist";
+        
+        if(req.body.id && req.body.id >0){mode = "modify";}
         var item = {
             'subject' : req.body.subject,
             'content' : req.body.content
         };
 
-        this.BoardService.insertData(item);
-        // console.log('boardData  : ', boardData.getDataValue('id'))
-        return { render: 'index' };
-    } // ,data : [boardData]
+        if(mode === "modify"){
+            await this.BoardService.editBoard(idx,item);
+        } else{
+            await this.BoardService.insertData(item);
+        }
+        
+        return { redirect : '/' };
+    }
 
-    async renderMain2(req: Request, res: Response, next: NextFunction) {
-        console.log('renderMain2')
-
+    async renderReload(req: Request, res: Response, next: NextFunction) {
         const boardList = await this.BoardService.getBoardList();
-        console.log(boardList);
-        return {render :'index', data : [boardList]}
+        
+        return {render :'index', total: boardList.length, data : boardList}
+    }
+
+    async renderGetBbs(req: Request, res: Response, next: NextFunction) {
+        console.log(req.params.id);
+
+        const board = await this.BoardService.getBoard(Number(req.params.id));
+        console.log(board);
+        return {render: 'regBbs', data: board};
+    }
+
+    async renderDelBbs(req: Request, res: Response, next: NextFunction){
+        
+        try {
+            console.log("delete");
+            await this.BoardService.deleteBoard(Number(req.params.id));
+            return {redirect: '/'}
+        } catch (error) {
+            console.error(error);
+            next(error);
+        }
+       
+    }
+
+    async renderRegBbs(req: Request, res: Response, next: NextFunction) {
+        
+        return  {render :'regBbs',data:""}
+        
     }
 
 }

@@ -1,20 +1,32 @@
 {
     "domain" : "",
     "routes" : [
-        {
+        { 
+            "cls" : "",
             "method": "get",
-            "route": "",
-            "render": "index"
+            "route": "/",
+            "render": "index",
+            "controller": "MainController",
+            "action": "renderReload"
         },
         {
             "method": "get",
             "route": "regBbs",
-            "render": "regBbs"
+            "controller": "MainController",
+            "action": "renderRegBbs"
         },
         {
             "method": "get",
-            "route": "login",
-            "render": "login"
+            "route": "regBbs/:id",
+            "render": "regBbs",
+            "controller":"MainController",
+            "action": "renderGetBbs"
+        },
+        {
+            "method": "delete",
+            "route" : "delBbs/:id",
+            "controller" :"MainController",
+            "action": "renderDelBbs"
         },
         {
             "method": "post",
@@ -26,7 +38,8 @@
             "method": "get",
             "route": "main2",
             "controller": "MainController",
-            "action": "renderMain2"
+            "action": "renderReload"
         }
+
     ]
 }

@@ -5,14 +5,36 @@
   </head>
   <body>
     <h1>BOARD</h1>
+
+    <!-- user START-->
+    <div>
+    <button onclick="location.href='/join'">JOIN</button>
+    <button onclick="location.href='/login'">LOGIN</button>
+    </div>
+
     <table>
       <tr>
         <th>idx</th>
         <th>subject</th>
         <th>content</th>
+        <th>regdate</th>
+        <th>....</th>
       </tr>
+      <% for(var i=0;i<total;i++){%>
+        <tr>
+          <td><%=i+1%></td>
+          <td><%=data[i].subject%></td>
+          <td><%=data[i].content%></td>
+          <td><%=data[i].createdAt.toISOString().replace(/T/, ' ').replace(/\..+/, '')%></td>
+          <td>
+            <button onclick="location.href='regBbs/<%=data[i].id%>'">수정</button>
+            <button onclick="location.href='delBbs/<%=data[i].id%>'">삭제</button>
+          </td>
+      </tr>
+
+      <%}%>
     </table>
-    <button onclick="location.href='/main2'">데이터불러오기</button>
+    <!-- <button onclick="location.href='main2'">데이터불러오기</button> -->
     <button onclick="location.href='regBbs'">게시글쓰기</button>
   </body>
 </html>
