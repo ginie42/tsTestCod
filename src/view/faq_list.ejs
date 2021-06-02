@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BBS</title>
+  </head>
+  <body>
+    <h1>BOARD</h1>
+    <table>
+      <tr>
+        <th>idx</th>
+        <th>subject</th>
+        <th>good</th>
+        <th>bad</th>
+        <th>good</th>
+        <th>good</th>
+      </tr>
+<%for(var i=0;i<total;i++){%>
+    <tr>
+        <td><%=data[i].id%></td>
+        <td><%=data[i].subject%></td>
+        <td><%=data[i].content%></td>
+    </tr>
+<%}%>
+    </table>
+
+    <button onclick="location.href='faq'">FAQ쓰기</button>
+  </body>
+</html>

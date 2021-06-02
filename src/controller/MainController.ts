@@ -58,4 +58,8 @@ export default class MainController {
         
     }
 
+    async renderFaq(req: Request, res: Response, next: NextFunction) {
+        return {render :'faq_list', data:""}
+    }
+
 }

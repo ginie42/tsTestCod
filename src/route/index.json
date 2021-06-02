@@ -39,7 +39,18 @@
             "route": "main2",
             "controller": "MainController",
             "action": "renderReload"
+        },
+        {
+            "method": "get",
+            "route": "faq_list",
+            "controller": "MainController",
+            "action": "renderFaqList"
+        },
+        {
+            "method": "get",
+            "route": "faq",
+            "controller": "MainController",
+            "action": "renderFaq"
         }
-
     ]
 }
