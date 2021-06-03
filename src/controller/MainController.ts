@@ -58,8 +58,23 @@ export default class MainController {
         
     }
 
-    async renderFaq(req: Request, res: Response, next: NextFunction) {
-        return {render :'faq_list', data:""}
+    async renderFaqList(req: Request, res: Response, next: NextFunction) {
+        const faqList = await this.BoardService.getFaqList();
+        return {render :'faq_list', data:faqList}
     }
 
+    async renderFaq(req: Request, res: Response, next: NextFunction) {
+        const categoryList = await this.BoardService.getFaqCategoryList();
+        return {render :'faq',categorys : categoryList, data:""}
+    }
+
+    async addCategoryPage(req: Request, res: Response, next: NextFunction){
+        // const categoryList = await this.BoardService.getFaqCategoryList();
+        return {render : 'category'}
+    }
+
+    async addCategory(req: Request, res: Response, next: NextFunction){
+        await this.BoardService.addCategory(req.body.name);
+        return {render : 'category'}
+    }
 }

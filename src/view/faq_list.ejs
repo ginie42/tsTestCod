@@ -4,7 +4,7 @@
     <title>BBS</title>
   </head>
   <body>
-    <h1>BOARD</h1>
+    <h1>FAQ</h1>
     <table>
       <tr>
         <th>idx</th>
@@ -14,10 +14,13 @@
         <th>good</th>
         <th>good</th>
       </tr>
-<%for(var i=0;i<total;i++){%>
+<%for(var i=0;i<data.length;i++){%>
     <tr>
         <td><%=data[i].id%></td>
         <td><%=data[i].subject%></td>
+        <td><%=data[i].content%></td>
+        <td><%=data[i].content%></td>
+        <td><%=data[i].content%></td>
         <td><%=data[i].content%></td>
     </tr>
 <%}%>

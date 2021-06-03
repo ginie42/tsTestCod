@@ -22,8 +22,10 @@
             <td>카테고리</td>
             <td>
                 <select>
-                    
-                    <option></option>
+                  <option value="0">선택하기</option>
+                  <%for(var i=0;i<categorys.length;i++){  %> 
+                    <option value="<%=i+1 %> "><%= categorys[i].name  %> </option>
+                  <%  }%> 
                 </select>
             </td>
         </tr>

@@ -51,6 +51,29 @@
             "route": "faq",
             "controller": "MainController",
             "action": "renderFaq"
+        },
+        {
+            "method": "post",
+            "route": "faq",
+            "controller": "MainController",
+            "action": "writeFaq"
+        },
+        {
+            "method": "post",
+            "route": "faq_view",
+            "controller": "MainController",
+            "action": "viewFaq"
+        },
+        {
+            "method": "get",
+            "route": "category",
+            "controller": "MainController",
+            "action": "addCategoryPage"
+        },{
+            "method": "post",
+            "route": "category",
+            "controller": "MainController",
+            "action": "addCategory"
         }
     ]
 }
